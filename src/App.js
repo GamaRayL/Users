@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { PostPage, UserPage, UsersListPage } from "./pages";
 
 function App() {
+  const [users, setUsers] = useState();
+  const [posts, setPosts] = useState();
+
+  async function getData() {
+    const usersAPI = "https://jsonplaceholder.typicode.com/users";
+    const postsAPI = "https://jsonplaceholder.typicode.com/posts";
+
+    try {
+      const usersResponse = await fetch(usersAPI);
+      const usersData = await usersResponse.json();
+      setUsers(usersData);
+
+      const postsResponse = await fetch(postsAPI);
+      const postsData = await postsResponse.json();
+      setPosts(postsData);
+    } catch (error) {}
+  }
+  getData();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PostPage users={users} posts={posts} />
+      <UserPage users={users} posts={posts} />
+      <UsersListPage users={users} posts={posts} />
     </div>
   );
 }
