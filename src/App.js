@@ -1,32 +1,25 @@
-import { useState } from "react";
-import { PostPage, UserPage, UsersListPage } from "./pages";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchUsersData } from "./store/users/";
+import { PostPage, UserPage, UsersListPage } from "./pages/";
 
 function App() {
-  const [users, setUsers] = useState();
-  const [posts, setPosts] = useState();
+  const dispatch = useDispatch();
 
-  async function getData() {
-    const usersAPI = "https://jsonplaceholder.typicode.com/users";
-    const postsAPI = "https://jsonplaceholder.typicode.com/posts";
-
-    try {
-      const usersResponse = await fetch(usersAPI);
-      const usersData = await usersResponse.json();
-      setUsers(usersData);
-
-      const postsResponse = await fetch(postsAPI);
-      const postsData = await postsResponse.json();
-      setPosts(postsData);
-    } catch (error) {}
-  }
-  getData();
+  useEffect(() => {
+    dispatch(fetchUsersData);
+  }, [dispatch]);
 
   return (
-    <div className="App">
-      <PostPage users={users} posts={posts} />
-      <UserPage users={users} posts={posts} />
-      <UsersListPage users={users} posts={posts} />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <PostPage />
+        <UserPage />
+        <UsersListPage />
+      </div>
+    </Provider>
   );
 }
 
