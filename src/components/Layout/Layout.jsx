@@ -2,7 +2,6 @@ import { Outlet } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Typography from "@mui/material/Typography";
 import Toolbar from "@mui/material/Toolbar";
-import { Container } from "@mui/system";
 
 export const Layout = () => {
   return (
@@ -14,13 +13,9 @@ export const Layout = () => {
           </Toolbar>
         </AppBar>
       </header>
-      <Container
-        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
-        <main>
-          <Outlet />
-        </main>
-      </Container>
+      <main style={{ display: "flex", flexDirection: "column" }}>
+        <Outlet />
+      </main>
       <footer></footer>
     </>
   );

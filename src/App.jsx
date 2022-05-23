@@ -21,7 +21,6 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<UsersListPage />} />
           <Route path="userpage/:id" element={<UserPage />} />
-
         </Route>
       </Routes>
     </div>

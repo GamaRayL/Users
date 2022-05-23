@@ -1,45 +1,81 @@
-import { Link } from "react-router-dom";
-import css from "./styles.module.css";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const UserCard = ({ user, posts }) => {
+const UserCard = ({ user }) => {
   return (
     <Card
       sx={{
         minWidth: 375,
-        width: 575,
         m: 1,
         borderRadius: 0,
         border: 2,
       }}
     >
-      <CardContent>
-        <Typography sx={{ fontSize: 35 }}>{user.name}</Typography>
+      <CardContent sx={{ pb: 0, borderBottom: 2 }}>
+        <Typography
+          sx={{ fontSize: 12, mb: 0 }}
+          color="text.secondary"
+          gutterBottom
+        >
+          Имя пользователя:
+        </Typography>
+        <Typography sx={{ fontSize: 35 }}>{user.username}</Typography>
       </CardContent>
-      <CardActions>
-        <Link className={css.link} to={`/userpage/${user.id}`}>
-          <Button
-            sx={{
-              ":hover": {
-                bgcolor: "white",
-                color: "black",
-              },
-              borderRadius: 0,
-              m: 0.5,
-              backgroundColor: "black",
-              color: "white",
-            }}
-            variant="contained"
-            color="inherit"
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <CardContent sx={{ pb: 0 }}>
+          <Typography
+            sx={{ fontSize: 12, mb: 0 }}
+            color="text.secondary"
+            gutterBottom
           >
-            подробнее о пользователе
-          </Button>
-        </Link>
-      </CardActions>
+            Имя / Фамилия:
+          </Typography>
+          <Typography sx={{ fontSize: 24 }}>{user.name}</Typography>
+        </CardContent>
+        <CardContent sx={{ pb: 0 }}>
+          <Typography
+            sx={{ fontSize: 12, mb: 0 }}
+            color="text.secondary"
+            gutterBottom
+          >
+            Почта:
+          </Typography>
+          <Typography sx={{ fontSize: 24 }}>{user.email}</Typography>
+        </CardContent>
+        <CardContent sx={{ pb: 0 }}>
+          <Typography
+            sx={{ fontSize: 12, mb: 0 }}
+            color="text.secondary"
+            gutterBottom
+          >
+            Номер телефона:
+          </Typography>
+          <Typography sx={{ fontSize: 24 }}>{user.phone}</Typography>
+        </CardContent>
+        <CardContent sx={{ pb: 0 }}>
+          <Typography
+            sx={{ fontSize: 12, mb: 0 }}
+            color="text.secondary"
+            gutterBottom
+          >
+            Веб-страница:
+          </Typography>
+          <Typography sx={{ fontSize: 24 }}>{user.website}</Typography>
+        </CardContent>
+        <CardContent sx={{ pb: 0 }}>
+          <Typography
+            sx={{ fontSize: 12, mb: 0 }}
+            color="text.secondary"
+            gutterBottom
+          >
+            Название компании и деятельность:
+          </Typography>
+          <Typography sx={{ fontSize: 24 }}>
+            {user.company.name} / {user.company.bs}
+          </Typography>
+        </CardContent>
+      </div>
     </Card>
   );
 };
