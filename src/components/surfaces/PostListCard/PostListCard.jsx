@@ -7,21 +7,32 @@ import {
   Typography,
 } from "@mui/material";
 
-const UserListCard = ({ user, posts }) => {
+const PostListCard = ({ post }) => {
   return (
     <Card
       sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
         minWidth: 375,
+        maxWidth: "32%",
         m: 1,
         borderRadius: 0,
-        border: 2,
+        border: 1,
       }}
     >
-      <CardContent>
-        <Typography sx={{ fontSize: 35 }}>{user.name}</Typography>
+      <CardContent sx={{ pb: 0 }}>
+        <Typography sx={{ fontSize: 22, fontWeight: 500 }}>
+          {post.title}
+        </Typography>
+      </CardContent>
+      <CardContent sx={{ pb: 0 }}>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary">
+          {post.body.slice(0, 100) + "..."}
+        </Typography>
       </CardContent>
       <CardActions>
-        <Link style={{ all: "unset" }} to={`/userpage/${user.id}`}>
+        <Link style={{ all: "unset" }} to={`/userpost/${post.id}`}>
           <Button
             sx={{
               ":hover": {
@@ -29,14 +40,14 @@ const UserListCard = ({ user, posts }) => {
                 color: "black",
               },
               borderRadius: 0,
-              m: 0.5,
+              mt: 2,
               backgroundColor: "black",
               color: "white",
             }}
             variant="contained"
             color="inherit"
           >
-            подробнее о пользователе
+            перейти к посту
           </Button>
         </Link>
       </CardActions>
@@ -44,4 +55,4 @@ const UserListCard = ({ user, posts }) => {
   );
 };
 
-export default UserListCard;
+export default PostListCard;
