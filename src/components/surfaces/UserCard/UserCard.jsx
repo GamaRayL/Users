@@ -7,7 +7,7 @@ const UserCard = ({ user }) => {
     <Card
       sx={{
         minWidth: 375,
-        m: 1,
+        mb: 8,
         borderRadius: 0,
         border: 2,
       }}

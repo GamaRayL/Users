@@ -24,7 +24,7 @@ export const UserPage = () => {
       {user.map((user) => (
         <UserCard key={user.id} user={user}></UserCard>
       ))}
-      <Typography sx={{ fontSize: 35, ml: 2 }}>Посты</Typography>
+      <Typography sx={{ fontSize: 34, ml: 2 }}>Посты</Typography>
       <Box
         sx={{
           display: "flex",

@@ -4,14 +4,10 @@ const PostCard = ({ post }) => {
   return (
     <Card
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
         minWidth: 375,
-        mr: 20,
-        ml: 20,
         borderRadius: 0,
         border: 1,
+        mb: 8,
       }}
     >
       <CardContent sx={{ pb: 0 }}>

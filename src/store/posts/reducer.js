@@ -28,7 +28,9 @@ const postsSlice = createSlice({
       state.status = "resolved";
       state.postsEntities = action.payload;
     },
-    [fetchPostsData.rejected]: (state, action) => {},
+    [fetchPostsData.rejected]: (state) => {
+      state.status = "error";
+    },
   },
 });
 

@@ -28,9 +28,10 @@ const usersSlice = createSlice({
       state.status = "resolved";
       state.usersEntities = action.payload;
     },
-    [fetchUsersData.rejected]: (state, action) => {},
+    [fetchUsersData.rejected]: (state) => {
+      state.status = "error";
+    },
   },
 });
-
 
 export default usersSlice.reducer;

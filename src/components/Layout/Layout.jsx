@@ -13,7 +13,7 @@ export const Layout = () => {
           </Toolbar>
         </AppBar>
       </header>
-      <main style={{ display: "flex", flexDirection: "column" }}>
+      <main style={{ display: "flex", flexDirection: "column", margin: 60 }}>
         <Outlet />
       </main>
       <footer></footer>
