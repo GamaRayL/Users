@@ -11,35 +11,6 @@ export const fetchCommentsData = createAsyncThunk(
   }
 );
 
-// export const addNewComment = createAsyncThunk(
-//   "comments/addNewComment",
-//   async function (name, email, body) {
-//     try {
-//       const comment = {
-//         name: name,
-//         email: email,
-//         body: body,
-//         postId: 1,
-//       };
-//       const response = await fetch(
-//         "https://jsonplaceholder.typicode.com/comments",
-//         {
-//           method: "POST",
-//           headers: { "Content-type": "application/json; charset=UTF-8" },
-//           body: JSON.stringify(comment),
-//         }
-//       );
-//       if (!response.ok) {
-//         console.log("Server error");
-//       }
-//       const data = await response.json();
-//       console.log(data);
-//     } catch (error) {
-//       return error;
-//     }
-//   }
-// );
-
 const commentsSlice = createSlice({
   name: "comments",
   initialState: {
