@@ -1,9 +1,9 @@
-import { Box, TextField, Button } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchComment, writeInputValue } from "../../store/comment/reducer";
-import { fetchCommentsData } from "../../store/comments/reducer";
+import { Box, TextField, Button } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
+import { fetchComment, writeInputValue } from "store/comment/reducer";
+import { fetchCommentsData } from "store/comments/reducer";
 
 export default function Form() {
   const dispatch = useDispatch();

@@ -2,8 +2,8 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Box, Button, Typography } from "@mui/material";
-import PostListCard from "../../components/surfaces/PostListCard/PostListCard";
-import UserCard from "../../components/surfaces/UserCard/UserCard";
+import PostListCard from "components/Surfaces/PostListCard";
+import UserCard from "components/Surfaces/UserCard";
 
 export const UserPage = () => {
   const [elementInArray, setElementInArray] = useState(3);

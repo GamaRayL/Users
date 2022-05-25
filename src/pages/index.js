@@ -1,5 +1,5 @@
-import { PostPage } from "./PostPage/PostPage";
-import { UserPage } from "./UserPage/UserPage";
-import { UsersListPage } from "./UsersListPage/UsersListPage";
+import { PostPage } from "./PostPage";
+import { UserPage } from "./UserPage";
+import { UsersListPage } from "./UsersListPage";
 
 export { PostPage, UserPage, UsersListPage };

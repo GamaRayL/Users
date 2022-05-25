@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import PostCard from "../../components/surfaces/PostCard/PostCard";
-import CommentCard from "../../components/surfaces/CommentCard/CommentCard";
-import Form from "../../components/Inputs/Form";
 import { Box, Typography, Button } from "@mui/material";
+import PostCard from "components/Surfaces/PostCard";
+import CommentCard from "components/Surfaces/CommentCard";
+import Form from "components/Inputs/Form";
 
 export const PostPage = () => {
   const [displayForm, setDisplayForm] = useState("none");
