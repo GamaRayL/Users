@@ -1,15 +1,11 @@
 import { Outlet } from "react-router-dom";
-import { AppBar, Typography, Toolbar } from "@mui/material";
+import AppToolBar from "components/Surfaces/AppToolBar";
 
 export const Layout = () => {
   return (
     <>
       <header>
-        <AppBar position="sticky" sx={{ bgcolor: "black", mb: 4 }}>
-          <Toolbar>
-            <Typography sx={{ fontSize: 54 }}>CLUB</Typography>{" "}
-          </Toolbar>
-        </AppBar>
+        <AppToolBar />
       </header>
       <main style={{ display: "flex", flexDirection: "column", margin: 60 }}>
         <Outlet />

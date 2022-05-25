@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 
-const UserListCard = ({ user, posts }) => {
+const UserListCard = ({ user }) => {
   return (
     <Card
       sx={{
